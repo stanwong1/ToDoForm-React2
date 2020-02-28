@@ -5,11 +5,14 @@ class ListItems extends Component {
     render() {
         const updatedList = this.props.todos.map((todo, i)=>{
             return(
-                <li key={i}>{this.props.todos[i]}</li>
+                <div> 
+                    <li key={i}>{todo}</li>
+                    <button onClick={() => this.props.deleteTodo(i)}>Done!</button>
+                    
+                </div>
                  
             )
         }) 
-        console.log(this.props.todos);
         return (
             <div>
                 I am list items!
